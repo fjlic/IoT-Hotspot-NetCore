@@ -1,0 +1,122 @@
+﻿@model IoT_Hotspot.Models.Sensor
+@{
+    ViewData["Title"] = "Create new sensor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="col-sm-12">
+        <h3>Create Sensor</h3>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-10">
+            <form method="POST" asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="erb_id" class="control-label"></label>
+                    <input asp-for="erb_id" class="form-control" />
+                    <span asp-validation-for="erb_id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="num_serie" class="control-label"></label>
+                    <input asp-for="num_serie" class="form-control" />
+                    <span asp-validation-for="num_serie" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="passw" class="control-label"></label>
+                    <input asp-for="passw" class="form-control" />
+                    <span asp-validation-for="passw" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="vol_1" class="control-label"></label>
+                    <input asp-for="vol_1" class="form-control" />
+                    <span asp-validation-for="vol_1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="vol_2" class="control-label"></label>
+                    <input asp-for="vol_2" class="form-control" />
+                    <span asp-validation-for="vol_2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="vol_3" class="control-label"></label>
+                    <input asp-for="vol_3" class="form-control" />
+                    <span asp-validation-for="vol_3" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="temp_1" class="control-label"></label>
+                    <input asp-for="temp_1" class="form-control" />
+                    <span asp-validation-for="temp_1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="temp_2" class="control-label"></label>
+                    <input asp-for="temp_2" class="form-control" />
+                    <span asp-validation-for="temp_2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="temp_3" class="control-label"></label>
+                    <input asp-for="temp_3" class="form-control" />
+                    <span asp-validation-for="temp_3" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="temp_4" class="control-label"></label>
+                    <input asp-for="temp_4" class="form-control" />
+                    <span asp-validation-for="temp_4" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="door_1" class="control-label"></label>
+                    <input asp-for="door_1" class="form-control" />
+                    <span asp-validation-for="door_1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="door_2" class="control-label"></label>
+                    <input asp-for="door_2" class="form-control" />
+                    <span asp-validation-for="door_2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="door_3" class="control-label"></label>
+                    <input asp-for="door_3" class="form-control" />
+                    <span asp-validation-for="door_3" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="door_4" class="control-label"></label>
+                    <input asp-for="door_4" class="form-control" />
+                    <span asp-validation-for="door_4" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="rlay_1" class="control-label"></label>
+                    <input asp-for="rlay_1" class="form-control" />
+                    <span asp-validation-for="rlay_1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="rlay_2" class="control-label"></label>
+                    <input asp-for="rlay_2" class="form-control" />
+                    <span asp-validation-for="rlay_2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="rlay_3" class="control-label"></label>
+                    <input asp-for="rlay_3" class="form-control" />
+                    <span asp-validation-for="rlay_3" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="rlay_4" class="control-label"></label>
+                    <input asp-for="rlay_4" class="form-control" />
+                    <span asp-validation-for="rlay_4" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="text" class="control-label"></label>
+                    <input asp-for="text" class="form-control" />
+                    <span asp-validation-for="text" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create sensor" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+  @{ <partial name="_ValidationScriptsPartial" /> }
+}
+

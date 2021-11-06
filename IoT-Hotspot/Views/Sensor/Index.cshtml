@@ -5,7 +5,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
+<!-- Main content -->
+<section class="content">
     @if (TempData["message"] != null)
     {
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -15,81 +16,99 @@
             </button>
         </div>
     }
-    <div class="col-sm-6">
-        <h3>List Sensors</h3>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">List Sensors</h3>
+                    <a class="btn btn-xs btn-success float-right" asp-action="Create" asp-controller="Sensor" role="button"><span class="fas fa-plus"></span></a>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="erbTable" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <td>@Html.DisplayNameFor(m => m.id)</td>
+                                <td>@Html.DisplayNameFor(m => m.erb_id)</td>
+                                <td>@Html.DisplayNameFor(m => m.num_serie)</td>
+                                <td>@Html.DisplayNameFor(m => m.passw)</td>
+                                <td>@Html.DisplayNameFor(m => m.vol_1)</td>
+                                <td>@Html.DisplayNameFor(m => m.vol_2)</td>
+                                <td>@Html.DisplayNameFor(m => m.vol_3)</td>
+                                <td>@Html.DisplayNameFor(m => m.temp_1)</td>
+                                <td>@Html.DisplayNameFor(m => m.temp_2)</td>
+                                <td>@Html.DisplayNameFor(m => m.temp_3)</td>
+                                <td>@Html.DisplayNameFor(m => m.temp_4)</td>
+                                <td>@Html.DisplayNameFor(m => m.door_1)</td>
+                                <td>@Html.DisplayNameFor(m => m.door_2)</td>
+                                <td>@Html.DisplayNameFor(m => m.door_3)</td>
+                                <td>@Html.DisplayNameFor(m => m.door_4)</td>
+                                <td>@Html.DisplayNameFor(m => m.rlay_1)</td>
+                                <td>@Html.DisplayNameFor(m => m.rlay_2)</td>
+                                <td>@Html.DisplayNameFor(m => m.rlay_3)</td>
+                                <td>@Html.DisplayNameFor(m => m.rlay_4)</td>
+                                <td>@Html.DisplayNameFor(m => m.text)</td>
+                                <td>@Html.DisplayNameFor(m => m.created_at)</td>
+                                <td>Actions</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.id</td>
+                                    <td>@item.erb_id</td>
+                                    <td>@item.num_serie</td>
+                                    <td>@item.passw</td>
+                                    <td>@item.vol_1</td>
+                                    <td>@item.vol_2</td>
+                                    <td>@item.vol_3</td>
+                                    <td>@item.temp_1</td>
+                                    <td>@item.temp_2</td>
+                                    <td>@item.temp_3</td>
+                                    <td>@item.temp_4</td>
+                                    <td>@item.door_1</td>
+                                    <td>@item.door_2</td>
+                                    <td>@item.door_3</td>
+                                    <td>@item.door_4</td>
+                                    <td>@item.rlay_1</td>
+                                    <td>@item.rlay_2</td>
+                                    <td>@item.rlay_3</td>
+                                    <td>@item.rlay_4</td>
+                                    <td>@item.text</td>
+                                    <td>@item.created_at</td>
+                                    <td>
+                                        <a asp-controller="Sensor" asp-action="Edit" asp-route-id="@item.id" class="btn btn-warning">Edit</a>
+                                        <a asp-controller="Sensor" asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
     </div>
-    <div class="col-sm-6">
-        <a class="btn btn-success btn-block" asp-action="Create" asp-controller="Sensor">Add Sensor</a>
-    </div>
-</div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
 
-<div class="row">
-    @if (Model.Count() > 0)
-    {
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <td>@Html.DisplayNameFor(m => m.id)</td>
-                    <td>@Html.DisplayNameFor(m => m.erb_id)</td>
-                    <td>@Html.DisplayNameFor(m => m.num_serie)</td>
-                    <td>@Html.DisplayNameFor(m => m.passw)</td>
-                    <td>@Html.DisplayNameFor(m => m.vol_1)</td>
-                    <td>@Html.DisplayNameFor(m => m.vol_2)</td>
-                    <td>@Html.DisplayNameFor(m => m.vol_3)</td>
-                    <td>@Html.DisplayNameFor(m => m.temp_1)</td>
-                    <td>@Html.DisplayNameFor(m => m.temp_2)</td>
-                    <td>@Html.DisplayNameFor(m => m.temp_3)</td>
-                    <td>@Html.DisplayNameFor(m => m.temp_4)</td>
-                    <td>@Html.DisplayNameFor(m => m.door_1)</td>
-                    <td>@Html.DisplayNameFor(m => m.door_2)</td>
-                    <td>@Html.DisplayNameFor(m => m.door_3)</td>
-                    <td>@Html.DisplayNameFor(m => m.door_4)</td>
-                    <td>@Html.DisplayNameFor(m => m.rlay_1)</td>
-                    <td>@Html.DisplayNameFor(m => m.rlay_2)</td>
-                    <td>@Html.DisplayNameFor(m => m.rlay_3)</td>
-                    <td>@Html.DisplayNameFor(m => m.rlay_4)</td>
-                    <td>@Html.DisplayNameFor(m => m.text)</td>
-                    <td>@Html.DisplayNameFor(m => m.created_at)</td>
-                    <td>Actions</td>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model) 
-                {
-                <tr>
-                    <td>@item.id</td>
-                    <td>@item.erb_id</td>
-                    <td>@item.num_serie</td>
-                    <td>@item.passw</td>
-                    <td>@item.vol_1</td>
-                    <td>@item.vol_2</td>
-                    <td>@item.vol_3</td>
-                    <td>@item.temp_1</td>
-                    <td>@item.temp_2</td>
-                    <td>@item.temp_3</td>
-                    <td>@item.temp_4</td>
-                    <td>@item.door_1</td>
-                    <td>@item.door_2</td>
-                    <td>@item.door_3</td>
-                    <td>@item.door_4</td>
-                    <td>@item.rlay_1</td>
-                    <td>@item.rlay_2</td>
-                    <td>@item.rlay_3</td>
-                    <td>@item.rlay_4</td>
-                    <td>@item.text</td>
-                    <td>@item.created_at</td>
-                    <td>
-                        <a asp-controller="Sensor" asp-action="Edit" asp-route-id="@item.id" class="btn btn-warning">Edit</a>
-                        <a asp-controller="Sensor" asp-action="Delete"asp-route-id="@item.id" class="btn btn-danger">Delete</a>
-                    </td>
-                </tr>
-                }
-            </tbody>
-        </table>
-    }
-    else 
-    {
-        <p>Empty data</p>
-    }
-</div>
-
+<script>
+  $(function () {
+     $('#erbTable').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false,
+      'scrollX'     : true,
+      'scrollY'     : false,
+      'scrollCollapse': false,
+      'language': {'url': '//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json'}
+    })
+  });
+</script>
